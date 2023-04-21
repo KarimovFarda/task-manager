@@ -1,0 +1,56 @@
+@import "~bootstrap/scss/bootstrap";
+
+@mixin flex($type: row, $align: center, $valign: center, $justify: center) {
+  display: flex;
+  flex-direction: $type;
+  align-items: $align;
+  align-content: $valign;
+  justify-content: $justify;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.task-drop>div {
+  width: 100%
+}
+
+.wrapper {
+  @include flex;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+main {
+  @include flex(row, center, center, center);
+  padding: 1rem 0;
+}
+
+.Toastify__toast-icon {
+  svg {
+    fill: #0013FE;
+  }
+}
+
+.all_members {
+  padding: 5px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  width: 30px;
+  justify-content: center;
+  margin: 0 -10px;
+}
+
+.all-member-images {
+  display: flex;
+  column-gap: 10px;
+}
+
+.Toastify__progress-bar {
+  background: #0013FE !important
+}

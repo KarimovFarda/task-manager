@@ -1,0 +1,249 @@
+@import "../../index.scss";
+
+.members {
+    @include flex(row, center, center, center);
+    background-color: #E6ECF0;
+    height: 4rem;
+
+    .member-bar {
+        @include flex(row, center, center, space-between);
+        position: relative;
+        width: 100%;
+
+        .bar-title {
+            display: flex;
+
+            .title {
+                font-weight: 700;
+                padding-right: 1rem;
+            }
+
+            .tag {
+                background-color: #0013FE;
+                border-radius: 4px;
+                padding: 4px 12px;
+                color: white;
+                font-weight: 500
+            }
+        }
+
+        .log-out {
+            font-weight: 700;
+            color: #0013FE;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-left: 7px;
+            position: relative;
+            top: 9px
+        }
+
+        .member-block {
+            @include flex(row, center, center, space-between);
+
+            .member-images {
+                @include flex(row, center, center, flex-start);
+                padding-right: 1rem;
+                border-right: 1px solid #000;
+
+                .member-image {
+                    margin-right: -0.5rem;
+                    z-index: 1;
+                    width: 34px;
+                    height: 34px;
+
+                    img {
+                        width: 34px;
+                        height: 34px;
+                        max-width: 100%;
+                        border-radius: 50%;
+                    }
+                }
+
+                .member-count {
+                    span {
+                        display: inline-block;
+                        width: 34px;
+                        height: 34px;
+                        line-height: 34px;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-weight: 700;
+                        font-size: 14px;
+                        background-color: #C4C4C4;
+                    }
+                }
+            }
+
+            .add-member {
+                padding-left: 1rem;
+
+                .add-btn {
+                    font-weight: 700;
+                    color: #0013FE;
+                    cursor: pointer;
+                    transition: all .3s;
+
+                    &:hover {
+                        color: #000bbb;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+
+        .add-popup {
+            position: absolute;
+            background-color: white;
+            z-index: 2;
+            top: 120%;
+            right: 0;
+            height: 300px;
+            width: 380px;
+            border-radius: 10px;
+            padding: 2rem;
+            box-sizing: border-box;
+            box-shadow: 0px 11.6189px 124.28px rgba(37, 72, 153, 0.17);
+
+            h2 {
+                margin: 0 0 1rem;
+                font-size: 25px;
+            }
+
+            form {
+                &.error {
+                    input {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .member-name {
+                    height: 73px;
+                    width: 100%;
+                    border: none;
+                    background-color: #F5F7FB;
+                    font-size: 1.3rem;
+                    padding: 1rem;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    margin: 1rem 0;
+                    font-weight: 700;
+
+                    &::placeholder {
+                        color: #000;
+                    }
+                }
+
+                .image-upload {
+                    @include flex(row, center, center, flex-start);
+                    height: 73px;
+                    width: 100%;
+                    border: none;
+                    background-color: #F5F7FB;
+                    font-size: 1.4rem;
+                    padding: 1rem;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    margin: 1rem 0;
+                    color: #000;
+                    font-weight: 700;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    svg {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        stroke-width: 2;
+                        margin-right: 2rem;
+                    }
+                }
+
+                .hidden-input {
+                    display: none;
+                }
+            }
+
+            .form-btn {
+                @include flex(row, center, center, space-between);
+
+                button {
+                    width: 143px;
+                    height: 55px;
+                    font-size: 18px;
+                    padding: 1rem 2rem;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    border: none;
+                    margin-top: 1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all .3s;
+
+                    &.cancel {
+                        background-color: #F5F7FB;
+                        color: #15192080;
+
+                        &:hover {
+                            transition: all .3s;
+                            background-color: #e9e9e9;
+                        }
+                    }
+
+                    &.save {
+                        background-color: #0013FE;
+                        color: #fff;
+
+                        &:hover {
+                            transition: all .3s;
+                            background-color: #000bbb;
+                        }
+                    }
+                }
+            }
+
+            span.error {
+                color: red;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    .auth-buttons {
+        flex-direction: column;
+    }
+
+    .members {
+        height: 6rem;
+    }
+
+    .member-bar {
+        flex-direction: column !important;
+        row-gap: 10px;
+
+        .add-popup {
+            width: 100% !important;
+        }
+    }
+
+    .bar-title {
+        .title {
+            font-size: 1.4rem;
+        }
+    }
+
+    .task-area {
+        flex-direction: column !important;
+
+        .task-drop {
+            width: 100% !important;
+        }
+    }
+
+    .log-out {
+        top: -1px !important;
+    }
+}
